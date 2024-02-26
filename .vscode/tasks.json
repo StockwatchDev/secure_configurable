@@ -1,0 +1,161 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "install dev env",
+            "type": "shell",
+            "command": "poetry lock --no-update && poetry install --with typing,style,testrunner,testing,docs",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "static type checking (package)",
+            "type": "shell",
+            "command": "poetry run mypy src tests examples",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "static type checking 3.10 (package)",
+            "type": "shell",
+            "command": "poetry run mypy --python-version 3.10 src tests examples",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "static type checking 3.9 (package)",
+            "type": "shell",
+            "command": "poetry run mypy --python-version 3.9 src tests examples",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "black (formatting; package)",
+            "type": "shell",
+            "command": "poetry run black src tests examples",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "test (tox)",
+            "type": "shell",
+            "command": "poetry run tox",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "serve docs locally",
+            "type": "shell",
+            "command": "poetry run mkdocs serve -f ./docs/mkdocs.yml",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "build docs",
+            "type": "shell",
+            "command": "poetry run mkdocs build -f ./docs/mkdocs.yml -d ../site",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "pylint",
+            "type": "shell",
+            "command": "poetry run pylint --recursive=y ./src ./tests ./examples",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "isort",
+            "type": "shell",
+            "command": "poetry run isort src tests examples",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+        {
+            "label": "update dev environment",
+            "type": "shell",
+            "command": "poetry update --with typing,style,testrunner,testing,docs",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        },
+    ]
+}

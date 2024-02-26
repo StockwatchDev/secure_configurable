@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"python.poetryPath": "C:\\swdev\\pipx\\bin\\poetry",
+		"editor.formatOnSave": true,
+		"editor.rulers": [
+			119
+		],
+		"python.testing.pytestEnabled": true,
+		"terminal.integrated.defaultProfile.windows": "Command Prompt",
+		"git.mergeEditor": true,
+		"python.autoComplete.extraPaths": [],
+		"python.analysis.extraPaths": [],
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.black-formatter"
+		},
+		"evenBetterToml.formatter.columnWidth": 119,
+		"editor.defaultFormatter": "ms-python.black-formatter"
+	},
+}
