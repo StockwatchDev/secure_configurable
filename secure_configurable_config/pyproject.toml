@@ -36,6 +36,13 @@ python = ">=3.9"
 application_settings = ">=0.4.0"
 attributes-doc = ">=0.3.0"
 
+[tool.poetry.group.testing]
+optional = true
+
+[tool.poetry.group.testing.dependencies]
+pytest = ">=7.0"
+pytest-cov = ">=4.0"
+
 [tool.poetry.group.typing]
 optional = true
 
